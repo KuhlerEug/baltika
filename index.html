@@ -18,7 +18,7 @@ body{margin:0;background:var(--bg);color:var(--ink);
 h1,h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;margin:0}
 p{margin:0}
 img{max-width:100%;display:block}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1400px;margin:0 auto;padding:0 20px}
 .narrow{max-width:720px;margin:0 auto}
 
 /* обложка — компактная, чтобы фото были видны сразу */
@@ -34,7 +34,7 @@ img{max-width:100%;display:block}
 /* календарь */
 .days{position:sticky;top:0;z-index:10;background:rgba(244,241,234,.94);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.days__row{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;max-width:1200px;margin:0 auto;scrollbar-width:none}
+.days__row{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;max-width:1400px;margin:0 auto;scrollbar-width:none}
 .days__row::-webkit-scrollbar{display:none}
 .chip{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
   min-width:56px;padding:6px 10px;border-radius:12px;border:1px solid var(--line);
@@ -53,10 +53,11 @@ img{max-width:100%;display:block}
 .day__date span{color:var(--amber);font-style:italic}
 
 /* галерея — главное на странице */
-.gallery{columns:2;column-gap:8px}
-.gallery figure{margin:0 0 8px;break-inside:avoid;border-radius:10px;overflow:hidden;background:var(--bg-soft);cursor:zoom-in}
-.gallery img{width:100%;height:auto}
-@media (min-width:760px){.gallery{columns:3;column-gap:12px}.gallery figure{margin-bottom:12px}}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.gallery figure{margin:0;border-radius:10px;overflow:hidden;background:var(--bg-soft);cursor:zoom-in;aspect-ratio:3/4}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gallery figure:hover img{transform:scale(1.03)}
+@media (min-width:1000px){.gallery{grid-template-columns:repeat(5,1fr);gap:12px}}
 .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:default!important;
   border:1px dashed rgba(31,42,51,.22);color:rgba(86,96,106,.7);font-size:14px}
 .ph svg{width:28px;height:28px}
@@ -117,17 +118,21 @@ footer .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:
       </div>
 
       <div class="gallery">
-        <figure class="ph ph--h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Фото скоро</figure>
-        <figure class="ph ph--v"></figure>
-        <figure class="ph ph--v"></figure>
-        <figure class="ph ph--h"></figure>
-        <figure class="ph ph--v"></figure>
-        <figure class="ph ph--h"></figure>
+        <figure><img src="photos/day1/01.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Мы на перроне Южного вокзала"></figure>
+        <figure><img src="photos/day1/02.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Перрон Южного вокзала"></figure>
+        <figure><img src="photos/day1/03.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Мама и папа приехали — Южный вокзал"></figure>
+        <figure><img src="photos/day1/04.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Спа-день: мама и папа в халатах"></figure>
+        <figure><img src="photos/day1/05.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Мама на мосту у Рыбной деревни"></figure>
+        <figure><img src="photos/day1/06.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Я и мама у Рыбной деревни"></figure>
+        <figure><img src="photos/day1/07.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Мама и папа на набережной Преголи"></figure>
+        <figure><img src="photos/day1/08.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="У афиши спектакля «Медведь»"></figure>
+        <figure><img src="photos/day1/09.webp" width="900" height="1600" loading="lazy" decoding="async" alt="Спектакль «Медведь»"></figure>
+        <figure><img src="photos/day1/10.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Вечер в апартаментах"></figure>
       </div>
 
       <div class="story narrow">
         <p>Встретили маму с папой на Южном вокзале и сразу поехали в апартаменты. Я сварила суп, мы пообедали, устроили спа-день и немного отдохнули с дороги. Родители привезли с дачи из Усть-Катава сливы — очень сладкие.</p>
-        <p>Потом собрались и поехали на остров Канта, прогулялись по Рыбной деревне, поужинали в «Поварёшке», а вечер закончили на кукольном спектакле «Медведь».</p>
+        <p>Потом собрались и поехали на остров Канта, прогулялись по Рыбной деревне, поужинали в «Поварёшке», а вечер закончили на кукольном спектакле «Медведь» по Чехову.</p>
       </div>
     </div>
   </section>
