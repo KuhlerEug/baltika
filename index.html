@@ -4,126 +4,84 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Десять дней у Балтики — Калининград с родителями</title>
-<meta name="description" content="Дневник поездки в Калининград с мамой и папой: по дням, с фотографиями.">
+<meta name="description" content="Фотодневник поездки в Калининград с мамой и папой, по дням.">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
-  --bg:#F4F1EA;
-  --bg-soft:#EAE4D8;
-  --ink:#1F2A33;
-  --ink-soft:#56606A;
-  --sea:#1F4E5F;
-  --sea-deep:#13303A;
-  --amber:#C8872E;
-  --line:rgba(31,42,51,.12);
-  --r:14px;
-  --shadow:0 2px 12px rgba(31,42,51,.08);
+  --bg:#F4F1EA; --bg-soft:#EAE4D8; --ink:#1F2A33; --ink-soft:#56606A;
+  --sea:#1F4E5F; --sea-deep:#13303A; --amber:#C8872E; --line:rgba(31,42,51,.12);
 }
 *{box-sizing:border-box}
-body{
-  margin:0;background:var(--bg);color:var(--ink);
+body{margin:0;background:var(--bg);color:var(--ink);
   font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
-}
-h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;margin:0}
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;margin:0}
 p{margin:0}
 img{max-width:100%;display:block}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px;margin:0 auto}
 
-/* ——— обложка ——— */
-.hero{
-  position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:flex-end;
-  padding:32px 0 120px;color:#F4F1EA;overflow:hidden;
-  background:
-    radial-gradient(90% 60% at 90% 0%,rgba(233,180,94,.16) 0%,rgba(233,180,94,0) 60%),
-    linear-gradient(180deg,#2A6072 0%,var(--sea) 45%,var(--sea-deep) 100%);
-}
-.hero__bg{position:absolute;inset:0;background:center/cover no-repeat}
-.hero__bg::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(19,48,58,.35) 0%,rgba(19,48,58,.15) 40%,rgba(19,48,58,.88) 100%)}
-.waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:96px;opacity:.14}
+/* обложка — компактная, чтобы фото были видны сразу */
+.hero{position:relative;padding:72px 0 56px;color:#F4F1EA;overflow:hidden;
+  background:radial-gradient(90% 80% at 90% 0%,rgba(233,180,94,.16) 0%,rgba(233,180,94,0) 60%),
+             linear-gradient(180deg,#2A6072 0%,var(--sea) 50%,var(--sea-deep) 100%)}
 .hero__in{position:relative;z-index:2}
-.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,234,.75);margin-bottom:20px}
-.hero h1{font-size:clamp(44px,10vw,80px);letter-spacing:-.01em}
+.waves{position:absolute;left:0;right:0;bottom:0;width:100%;height:64px;opacity:.14}
+.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,241,234,.75);margin-bottom:16px}
+.hero h1{font-size:clamp(40px,8vw,64px);letter-spacing:-.01em}
 .hero h1 em{font-style:italic;font-weight:400;color:#E9B45E}
-.hero__sub{margin-top:24px;font-size:18px;color:rgba(244,241,234,.86);max-width:34ch}
 
-/* ——— навигация по дням ——— */
-.days{position:sticky;top:0;z-index:10;background:rgba(244,241,234,.92);
+/* календарь */
+.days{position:sticky;top:0;z-index:10;background:rgba(244,241,234,.94);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.days__row{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;max-width:760px;margin:0 auto;scrollbar-width:none}
+.days__row{display:flex;gap:8px;overflow-x:auto;padding:12px 20px;max-width:1200px;margin:0 auto;scrollbar-width:none}
 .days__row::-webkit-scrollbar{display:none}
 .chip{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  min-width:52px;padding:6px 10px;border-radius:12px;border:1px solid var(--line);
+  min-width:56px;padding:6px 10px;border-radius:12px;border:1px solid var(--line);
   text-decoration:none;color:var(--ink-soft);font-size:12px;line-height:1.2;background:#fff}
 .chip b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;line-height:1;color:var(--ink)}
 .chip--on{background:var(--sea);border-color:var(--sea);color:rgba(244,241,234,.8)}
 .chip--on b{color:#F4F1EA}
 .chip--soon{opacity:.45;pointer-events:none}
 
-/* ——— день ——— */
-.day{padding:64px 0 72px}
-.day__meta{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:700}
-.day__title{margin-top:12px;font-size:clamp(40px,8vw,56px);color:var(--sea-deep)}
-.day__title span{font-weight:400;font-style:italic;color:var(--ink-soft);font-size:.6em;display:block;margin-bottom:4px}
-.lead{margin-top:24px;font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4.6vw,30px);line-height:1.35;color:var(--sea)}
+/* день */
+.day{padding:40px 0 72px;scroll-margin-top:72px}
+.day + .day{border-top:1px solid var(--line)}
+.day__head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.day__num{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,8vw,64px);font-weight:600;line-height:1;color:var(--sea-deep)}
+.day__date{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4.5vw,32px);color:var(--ink-soft)}
+.day__date span{color:var(--amber);font-style:italic}
 
-/* лента событий */
-.flow{list-style:none;margin:40px 0 0;padding:0;position:relative}
-.flow::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:1px;background:var(--line)}
-.flow li{position:relative;display:grid;grid-template-columns:40px 1fr;gap:16px;padding-bottom:28px}
-.flow li:last-child{padding-bottom:0}
-.dot{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;color:var(--sea);box-shadow:var(--shadow)}
-.dot svg{width:18px;height:18px}
-.flow h3{font-size:24px;color:var(--sea-deep);padding-top:4px}
-.flow p{margin-top:4px;color:var(--ink-soft)}
-
-/* гостинец */
-.gift{margin-top:40px;background:var(--bg-soft);border-radius:var(--r);padding:24px 24px 24px 28px;
-  border-left:3px solid var(--amber)}
-.gift small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:700}
-.gift p{margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.35;color:var(--ink)}
-
-/* фото */
-.gallery{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.gallery figure{margin:0;border-radius:10px;overflow:hidden;background:var(--bg-soft);aspect-ratio:4/5;cursor:zoom-in}
-.gallery figure.wide{grid-column:span 2;aspect-ratio:3/2}
-.gallery img{width:100%;height:100%;object-fit:cover}
-.ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-  border:1px dashed rgba(31,42,51,.22);color:rgba(86,96,106,.7);font-size:14px;cursor:default!important}
+/* галерея — главное на странице */
+.gallery{columns:2;column-gap:8px}
+.gallery figure{margin:0 0 8px;break-inside:avoid;border-radius:10px;overflow:hidden;background:var(--bg-soft);cursor:zoom-in}
+.gallery img{width:100%;height:auto}
+@media (min-width:760px){.gallery{columns:3;column-gap:12px}.gallery figure{margin-bottom:12px}}
+.ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:default!important;
+  border:1px dashed rgba(31,42,51,.22);color:rgba(86,96,106,.7);font-size:14px}
 .ph svg{width:28px;height:28px}
-.gallery .only-wide{display:none}
-@media (min-width:640px){
-  .gallery .only-wide{display:flex}
-  .gallery{grid-template-columns:repeat(3,1fr);gap:12px}
-  .gallery figure.wide{grid-column:span 3;aspect-ratio:16/9}
-}
+.ph--v{aspect-ratio:3/4}.ph--h{aspect-ratio:4/3}
 
-/* дальше */
-.next{background:var(--sea-deep);color:rgba(244,241,234,.82);padding:64px 0}
-.next h2{color:#F4F1EA;font-size:clamp(30px,6vw,40px)}
-.next p{margin-top:12px;max-width:44ch}
-.soon{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.soon div{border:1px solid rgba(244,241,234,.14);border-radius:12px;padding:12px;font-size:13px;color:rgba(244,241,234,.6)}
-.soon b{display:block;font-family:'Cormorant Garamond',serif;font-size:22px;color:#F4F1EA;font-weight:600}
-@media (min-width:640px){.soon{grid-template-columns:repeat(5,1fr)}}
+/* пересказ дня */
+.story{margin-top:32px;font-size:18px;line-height:1.75;color:var(--ink)}
+.story p + p{margin-top:16px}
 
-footer{padding:48px 0;text-align:center;color:var(--ink-soft);font-size:14px}
-footer .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:var(--sea);margin-bottom:8px}
+footer{padding:48px 0;text-align:center;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--line)}
+footer .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:var(--sea);margin-bottom:4px}
 
 /* просмотр фото */
-.lb{position:fixed;inset:0;z-index:50;background:rgba(10,20,26,.94);display:none;align-items:center;justify-content:center;padding:16px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,20,26,.95);display:none;align-items:center;justify-content:center;padding:16px}
 .lb.on{display:flex}
-.lb img{max-height:90vh;max-width:100%;border-radius:8px}
-.lb button{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;border-radius:50%;
-  background:rgba(244,241,234,.12);color:#F4F1EA;font-size:26px;line-height:1;cursor:pointer}
+.lb img{max-height:92vh;max-width:100%;border-radius:6px}
+.lb button{position:absolute;width:48px;height:48px;border:0;border-radius:50%;background:rgba(244,241,234,.12);color:#F4F1EA;font-size:28px;line-height:1;cursor:pointer}
+.lb .x{top:12px;right:12px}
+.lb .prev{left:12px;top:50%;transform:translateY(-50%)}
+.lb .next{right:12px;top:50%;transform:translateY(-50%)}
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="hero__bg"></div>
   <svg class="waves" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
     <path fill="none" stroke="#F4F1EA" stroke-width="2" d="M0 60 Q180 20 360 60 T720 60 T1080 60 T1440 60"/>
     <path fill="none" stroke="#F4F1EA" stroke-width="2" d="M0 110 Q180 70 360 110 T720 110 T1080 110 T1440 110"/>
@@ -132,7 +90,6 @@ footer .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:
   <div class="wrap hero__in">
     <div class="eyebrow">Калининград · сентябрь 2026</div>
     <h1>Десять дней <em>у&nbsp;Балтики</em></h1>
-    <p class="hero__sub">Мама и папа приехали из Усть-Катава. Записываю каждый день нашей поездки, чтобы ничего не забыть.</p>
   </div>
 </header>
 
@@ -154,65 +111,23 @@ footer .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:
 <main>
   <section class="day" id="day1">
     <div class="wrap">
-      <div class="day__meta">День 1 · 13 сентября, воскресенье</div>
-      <h2 class="day__title"><span>первый день</span>Встреча</h2>
-      <p class="lead">Поезд из Москвы пришёл на Южный вокзал — и наша поездка началась прямо на перроне.</p>
-
-      <ol class="flow">
-        <li>
-          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M9 21l-2-4M15 21l2-4M9 14h.01M15 14h.01"/></svg></div>
-          <div><h3>Южный вокзал</h3><p>Встретили маму с папой после долгой дороги через полстраны и сразу поехали в апартаменты.</p></div>
-        </li>
-        <li>
-          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a8 8 0 0 1-16 0zM8 7c0-1 1-1.5 1-2.5M12 7c0-1 1-1.5 1-2.5M16 7c0-1 1-1.5 1-2.5"/></svg></div>
-          <div><h3>Домашний обед</h3><p>Я сварила суп — первый обед на новом месте получился совсем домашним.</p></div>
-        </li>
-        <li>
-          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 3.5 5 6.5 5 9a5 5 0 0 1-10 0c0-2.5 2-5.5 5-9z"/></svg></div>
-          <div><h3>Спа-день</h3><p>Устроили себе спа-день и немного отдохнули с дороги.</p></div>
-        </li>
-        <li>
-          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M9 6h6M8 10h8l1 11H7zM3 21h18"/></svg></div>
-          <div><h3>Остров Канта и Рыбная деревня</h3><p>Отдохнув, собрались и поехали на остров Канта, а оттуда — гулять по Рыбной деревне.</p></div>
-        </li>
-        <li>
-          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v4a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 0-3 2.5-3 6h3v12"/></svg></div>
-          <div><h3>Ужин</h3><p>После прогулки поужинали в «Поварёшке».</p></div>
-        </li>
-        <li>
-          <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6a8 8 0 0 1-16 0z"/><path d="M9 9h.01M15 9h.01M9.5 13.5a3.5 3.5 0 0 0 5 0"/></svg></div>
-          <div><h3>Спектакль «Медведь»</h3><p>А завершили день в театре — на кукольном спектакле «Медведь».</p></div>
-        </li>
-      </ol>
-
-      <aside class="gift">
-        <small>Гостинец с Урала</small>
-        <p>Родители привезли дачные сливы из Усть-Катава. Сладкие — такие бывают только свои.</p>
-      </aside>
-
-      <div class="gallery" data-day="1">
-        <figure class="wide ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Здесь будут фотографии дня</figure>
-        <figure class="ph"></figure>
-        <figure class="ph"></figure>
-        <figure class="ph only-wide"></figure>
+      <div class="day__head">
+        <div class="day__num">День 1</div>
+        <div class="day__date">13 сентября, <span>воскресенье</span></div>
       </div>
-    </div>
-  </section>
 
-  <section class="next">
-    <div class="wrap">
-      <h2>Дальше — каждый день</h2>
-      <p>Впереди ещё девять дней. Новые страницы дневника будут появляться здесь по вечерам.</p>
-      <div class="soon">
-        <div><b>2</b>14.09, пн</div>
-        <div><b>3</b>15.09, вт</div>
-        <div><b>4</b>16.09, ср</div>
-        <div><b>5</b>17.09, чт</div>
-        <div><b>6</b>18.09, пт</div>
-        <div><b>7</b>19.09, сб</div>
-        <div><b>8</b>20.09, вс</div>
-        <div><b>9</b>21.09, пн</div>
-        <div><b>10</b>22.09, вт</div>
+      <div class="gallery">
+        <figure class="ph ph--h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Фото скоро</figure>
+        <figure class="ph ph--v"></figure>
+        <figure class="ph ph--v"></figure>
+        <figure class="ph ph--h"></figure>
+        <figure class="ph ph--v"></figure>
+        <figure class="ph ph--h"></figure>
+      </div>
+
+      <div class="story narrow">
+        <p>Встретили маму с папой на Южном вокзале и сразу поехали в апартаменты. Я сварила суп, мы пообедали, устроили спа-день и немного отдохнули с дороги. Родители привезли с дачи из Усть-Катава сливы — очень сладкие.</p>
+        <p>Потом собрались и поехали на остров Канта, прогулялись по Рыбной деревне, поужинали в «Поварёшке», а вечер закончили на кукольном спектакле «Медведь».</p>
       </div>
     </div>
   </section>
@@ -223,16 +138,29 @@ footer .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:
   Калининград, сентябрь 2026
 </footer>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true"><button type="button" aria-label="Закрыть">×</button><img alt=""></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button type="button" class="x" aria-label="Закрыть">×</button>
+  <button type="button" class="prev" aria-label="Назад">‹</button>
+  <button type="button" class="next" aria-label="Вперёд">›</button>
+  <img alt="">
+</div>
 <script>
 (function(){
-  var lb=document.getElementById('lb'),im=lb.querySelector('img');
+  var lb=document.getElementById('lb'),im=lb.querySelector('img'),list=[],k=0;
+  function show(i){k=(i+list.length)%list.length;im.src=list[k].currentSrc||list[k].src;lb.classList.add('on')}
   document.addEventListener('click',function(e){
     var f=e.target.closest('.gallery figure');
-    if(f&&!f.classList.contains('ph')){var i=f.querySelector('img');im.src=i.currentSrc||i.src;im.alt=i.alt;lb.classList.add('on');return}
-    if(e.target===lb||e.target.closest('.lb button'))lb.classList.remove('on');
+    if(f&&!f.classList.contains('ph')){list=[].slice.call(f.parentNode.querySelectorAll('img'));show(list.indexOf(f.querySelector('img')));return}
+    if(e.target.closest('.lb .prev'))return show(k-1);
+    if(e.target.closest('.lb .next'))return show(k+1);
+    if(e.target===lb||e.target.closest('.lb .x'))lb.classList.remove('on');
   });
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')lb.classList.remove('on');
+    if(e.key==='ArrowLeft')show(k-1);
+    if(e.key==='ArrowRight')show(k+1);
+  });
 })();
 </script>
 </body>
